@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+from mangum import Mangum
 from app.db.dynamodb import table
 from app.routes.results import router as results_router
 from app.routes.history import router as history_router
@@ -11,7 +11,8 @@ from app.routes.reminders import router as reminders_router
 from app.routes.alerts import router as alerts_router
 from app.routes.sync import router as sync_router
 from app.routes.voice import router as voice_router
-
+from app.routes.auth import router as auth_router
+    
 app = FastAPI(
     title="Cognitive Gaming & Memory Assistance API",
     version="1.0.0",
@@ -43,3 +44,5 @@ app.include_router(reminders_router)
 app.include_router(alerts_router)
 app.include_router(sync_router)
 app.include_router(voice_router)
+app.include_router(auth_router)
+handler = Mangum(app)
