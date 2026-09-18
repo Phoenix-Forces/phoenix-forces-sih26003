@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">আরোগ্য কগনিটিভ</string>
+    <string name="splash_tagline">জ্ঞানীয় স্বাস্থ্য এবং দৈনিক সেবা সঙ্গী</string>
+    <string name="greeting_morning">শুভ সকাল</string>
+    <string name="greeting_afternoon">শুভ দুপুর</string>
+    <string name="greeting_evening">শুভ সন্ধ্যা</string>
+    <string name="greeting_user">%1$s, %2$s</string>
+    <string name="offline_ready">অফলাইন প্রস্তুত</string>
+
+    <string name="role_title">আরোগ্যতে স্বাগতম</string>
+    <string name="role_subtitle">এগিয়ে যেতে আপনার ভূমিকা নির্বাচন করুন</string>
+    <string name="role_patient">আমি একজন রোগী</string>
+    <string name="role_patient_desc">মস্তিষ্ক প্রশিক্ষণের খেলা খেলুন, দৈনিক ওষুধের অনুস্মারকের সময় সেট করুন এবং স্বাস্থ্য ট্র্যাক করুন</string>
+    <string name="role_caregiver">আমি একজন সেবাকারী</string>
+    <string name="role_caregiver_desc">রোগীর অগ্রগতি পর্যবেক্ষণ করুন, অনুস্মারকের সময়সূচী তৈরি করুন এবং জরুরি সতর্কতা পান</string>
+
+    <string name="start_today_game">আজকের জ্ঞানীয় খেলা শুরু করুন</string>
+    <string name="game_card_subtitle">আপনার স্মৃতিশক্তি তীক্ষ্ণ এবং মন সক্রিয় রাখুন</string>
+    <string name="play_now">এখনই খেলুন</string>
+    <string name="next_reminder">পরবর্তী অনুস্মারক</string>
+    <string name="no_reminders">আজকের জন্য কোনো অনুস্মারক নেই</string>
+    <string name="your_progress">আপনার অগ্রগতি</string>
+    <string name="weekly_avg">সাপ্তাহিক গড়</string>
+    <string name="active_streak">সক্রিয় স্ট্রীক</string>
+    <string name="days">দিন</string>
+
+    <string name="voice_assistant">ভয়েস সহকারী</string>
+    <string name="voice_listening">শুনছি...</string>
+    <string name="voice_processing">প্রসেসিং করা হচ্ছে...</string>
+    <string name="voice_prompt">মাইক্রোফোনে ট্যাপ করুন এবং একটি নির্দেশ দিন</string>
+    <string name="voice_hint_examples">বলার চেষ্টা করুন: \"খেলা শুরু করুন\", \"অনুস্মারক দেখান\", \"অগ্রগতি দেখান\"</string>
+    <string name="quick_commands">দ্রুত ভয়েস নির্দেশাবলী</string>
+    <string name="cmd_start_game">খেলা শুরু করুন</string>
+    <string name="cmd_open_games">গেমস খুলুন</string>
+    <string name="cmd_show_progress">অগ্রগতি দেখান</string>
+    <string name="cmd_show_reminders">অনুস্মারক দেখান</string>
+    <string name="cmd_go_home">হোমে যান</string>
+
+    <string name="language_settings">ভাষা সেটিংস</string>
+    <string name="select_language">ভাষা নির্বাচন করুন</string>
+    <string name="lang_en">English</string>
+    <string name="lang_as">অসমীয়া (Assamese)</string>
+    <string name="lang_bn">বাংলা (Bengali)</string>
+    <string name="lang_hi">হিিন্দি (Hindi)</string>
+
+    <string name="nav_home">হোম</string>
+    <string name="nav_games">জ্ঞানীয় খেলা</string>
+    <string name="nav_reminders">অনুস্মারক</string>
+    <string name="nav_progress">অগ্রগতি ট্র্যাকার</string>
+    <string name="nav_profile">প্রোফাইল</string>
+    <string name="nav_caregiver">সেবাকারী ড্যাশবোর্ড</string>
+    <string name="nav_switch_role">ভূমিকা পরিবর্তন করুন</string>
+
+    <string name="profile_title">রোগীর প্রোফাইল</string>
+    <string name="profile_name">রোগীর নাম</string>
+    <string name="profile_age">বয়স</string>
+    <string name="profile_caregiver">সেবাকারীর নাম</string>
+    <string name="profile_emergency">জরুরি যোগাযোগ</string>
+    <string name="profile_language">পছন্দের ভাষা</string>
+    <string name="edit_profile">প্রোফাইল এডিট করুন</string>
+    <string name="save_profile">প্রোফাইল সংরক্ষণ করুন</string>
+
+    <string name="tts_opening_game">এখন জ্ঞানীয় খেলা খোলা হচ্ছে</string>
+    <string name="tts_opening_games_list">জ্ঞানীয় খেলার তালিকা খোলা হচ্ছে</string>
+    <string name="tts_opening_progress">আপনার অগ্রগতি সারাংশ খোলা হচ্ছে</string>
+    <string name="tts_opening_reminders">আপনার দৈনিক অনুস্মারকের তালিকা খোলা হচ্ছে</string>
+    <string name="tts_going_home">হোম স্ক্রিনে যাওয়া হচ্ছে</string>
+    <string name="tts_not_understood">দুঃখিত, আমি সেই নির্দেশটি বুঝতে পারিনি।</string>
+
+    <string name="game_memory_title">মেমোরি ফ্লিপ</string>
+    <string name="game_pattern_title">প্যাটার্ন ম্যাচ</string>
+    <string name="game_word_title">ওয়ার্ড পাজল</string>
+    <string name="game_math_title">ম্যাথ কোয়েস্ট</string>
+</resources>

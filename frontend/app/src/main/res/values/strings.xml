@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Arogya Cognitive</string>
+    <string name="splash_tagline">Cognitive Health &amp; Daily Care Companion</string>
+    <string name="greeting_morning">Good Morning</string>
+    <string name="greeting_afternoon">Good Afternoon</string>
+    <string name="greeting_evening">Good Evening</string>
+    <string name="greeting_user">%1$s, %2$s</string>
+    <string name="offline_ready">Offline Ready</string>
+
+    <string name="role_title">Welcome to Arogya</string>
+    <string name="role_subtitle">Please select your role to continue</string>
+    <string name="role_patient">I am a Patient</string>
+    <string name="role_patient_desc">Play brain training games, set daily medicine reminders, and track your health</string>
+    <string name="role_caregiver">I am a Caregiver</string>
+    <string name="role_caregiver_desc">Monitor patient progress, schedule reminders, and receive urgent health alerts</string>
+
+    <string name="start_today_game">Start Today\'s Cognitive Game</string>
+    <string name="game_card_subtitle">Keep your memory sharp and mind active</string>
+    <string name="play_now">Play Now</string>
+    <string name="next_reminder">Next Reminder</string>
+    <string name="no_reminders">No upcoming reminders for today</string>
+    <string name="your_progress">Your Progress</string>
+    <string name="weekly_avg">Weekly Average</string>
+    <string name="active_streak">Active Streak</string>
+    <string name="days">Days</string>
+
+    <string name="voice_assistant">Voice Assistant</string>
+    <string name="voice_listening">Listening...</string>
+    <string name="voice_processing">Processing...</string>
+    <string name="voice_prompt">Tap the microphone and speak a command</string>
+    <string name="voice_hint_examples">Try saying: \"Start game\", \"Show reminders\", \"Show progress\"</string>
+    <string name="quick_commands">Quick Voice Commands</string>
+    <string name="cmd_start_game">Start Game</string>
+    <string name="cmd_open_games">Open Games</string>
+    <string name="cmd_show_progress">Show Progress</string>
+    <string name="cmd_show_reminders">Show Reminders</string>
+    <string name="cmd_go_home">Go Home</string>
+
+    <string name="language_settings">Language Settings</string>
+    <string name="select_language">Select Language</string>
+    <string name="lang_en">English</string>
+    <string name="lang_as">অসমীয়া (Assamese)</string>
+    <string name="lang_bn">বাংলা (Bengali)</string>
+    <string name="lang_hi">हिन्दी (Hindi)</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_games">Cognitive Games</string>
+    <string name="nav_reminders">Reminders</string>
+    <string name="nav_progress">Progress Tracker</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_caregiver">Caregiver Dashboard</string>
+    <string name="nav_switch_role">Switch Role</string>
+
+    <string name="profile_title">Patient Profile</string>
+    <string name="profile_name">Patient Name</string>
+    <string name="profile_age">Age</string>
+    <string name="profile_caregiver">Caregiver Name</string>
+    <string name="profile_emergency">Emergency Contact</string>
+    <string name="profile_language">Preferred Language</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="save_profile">Save Profile</string>
+
+    <string name="tts_opening_game">Opening cognitive game now</string>
+    <string name="tts_opening_games_list">Opening cognitive games list</string>
+    <string name="tts_opening_progress">Opening your progress summary</string>
+    <string name="tts_opening_reminders">Opening your daily reminders</string>
+    <string name="tts_going_home">Going to Home screen</string>
+    <string name="tts_not_understood">Sorry, I didn\'t understand that command.</string>
+
+    <string name="game_memory_title">Memory Flip</string>
+    <string name="game_pattern_title">Pattern Match</string>
+    <string name="game_word_title">Word Puzzle</string>
+    <string name="game_math_title">Math Quest</string>
+</resources>

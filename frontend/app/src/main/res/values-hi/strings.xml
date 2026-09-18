@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">आरोग्य कॉग्निटिव</string>
+    <string name="splash_tagline">संज्ञानात्मक स्वास्थ्य और दैनिक देखभाल साथी</string>
+    <string name="greeting_morning">शुभ प्रभात</string>
+    <string name="greeting_afternoon">शुभ दोपहर</string>
+    <string name="greeting_evening">शुभ संध्या</string>
+    <string name="greeting_user">%1$s, %2$s</string>
+    <string name="offline_ready">ऑफ़लाइन तैयार</string>
+
+    <string name="role_title">आरोग्य में आपका स्वागत है</string>
+    <string name="role_subtitle">आगे बढ़ने के लिए अपनी भूमिका चुनें</string>
+    <string name="role_patient">मैं एक मरीज हूँ</string>
+    <string name="role_patient_desc">मस्तिष्क प्रशिक्षण गेम खेलें, दैनिक दवा रिमाइंडर सेट करें और अपना स्वास्थ्य ट्रैक करें</string>
+    <string name="role_caregiver">मैं एक देखभालकर्ता हूँ</string>
+    <string name="role_caregiver_desc">मरीज की प्रगति की निगरानी करें, रिमाइंडर शेड्यूल करें और जरूरी अलर्ट प्राप्त करें</string>
+
+    <string name="start_today_game">आज का संज्ञानात्मक खेल शुरू करें</string>
+    <string name="game_card_subtitle">अपनी याददाश्त तेज़ और मन सक्रिय रखें</string>
+    <string name="play_now">अभी खेलें</string>
+    <string name="next_reminder">अगला रिमाइंडर</string>
+    <string name="no_reminders">आज के लिए कोई आगामी रिमाइंडर नहीं</string>
+    <string name="your_progress">आपकी प्रगति</string>
+    <string name="weekly_avg">साप्ताहिक औसत</string>
+    <string name="active_streak">सक्रिय स्ट्रिक</string>
+    <string name="days">दिन</string>
+
+    <string name="voice_assistant">वॉइस असिस्टेंट</string>
+    <string name="voice_listening">सुन रहा हूँ...</string>
+    <string name="voice_processing">प्रॉसेस हो रहा है...</string>
+    <string name="voice_prompt">माइक दबाएं और कमांड बोलें</string>
+    <string name="voice_hint_examples">बोलने का प्रयास करें: \"गेम शुरू करें\", \"रिमाइंडर दिखाएं\", \"प्रगति दिखाएं\"</string>
+    <string name="quick_commands">त्वरित वॉइस कमांड</string>
+    <string name="cmd_start_game">गेम शुरू करें</string>
+    <string name="cmd_open_games">गेम्स खोलें</string>
+    <string name="cmd_show_progress">प्रगति दिखाएं</string>
+    <string name="cmd_show_reminders">रिमाइंडर दिखाएं</string>
+    <string name="cmd_go_home">होम पर जाएं</string>
+
+    <string name="language_settings">भाषा सेटिंग्स</string>
+    <string name="select_language">भाषा चुनें</string>
+    <string name="lang_en">English</string>
+    <string name="lang_as">অসমীয়া (অसमिया)</string>
+    <string name="lang_bn">বাংলা (बंगाली)</string>
+    <string name="lang_hi">हिन्दी (Hindi)</string>
+
+    <string name="nav_home">होम</string>
+    <string name="nav_games">संज्ञानात्मक गेम</string>
+    <string name="nav_reminders">रिमाइंडर</string>
+    <string name="nav_progress">प्रगति ट्रैकर</string>
+    <string name="nav_profile">प्रोफ़ाइल</string>
+    <string name="nav_caregiver">देखभालकर्ता डैशबोर्ड</string>
+    <string name="nav_switch_role">भूमिका बदलें</string>
+
+    <string name="profile_title">मरीज का प्रोफ़ाइल</string>
+    <string name="profile_name">मरीज का नाम</string>
+    <string name="profile_age">आयु</string>
+    <string name="profile_caregiver">देखभालकर्ता का नाम</string>
+    <string name="profile_emergency">आपातकालीन संपर्क</string>
+    <string name="profile_language">पसंदीदा भाषा</string>
+    <string name="edit_profile">प्रोफ़ाइल संपादित करें</string>
+    <string name="save_profile">प्रोफ़ाइल सहेजें</string>
+
+    <string name="tts_opening_game">अब संज्ञानात्मक खेल खोला जा रहा है</string>
+    <string name="tts_opening_games_list">संज्ञानात्मक खेलों की सूची खोली जा रही है</string>
+    <string name="tts_opening_progress">आपकी प्रगति सारांश खोली जा रही है</string>
+    <string name="tts_opening_reminders">आपके दैनिक रिमाइंडर खोले जा रहे हैं</string>
+    <string name="tts_going_home">होम स्क्रीन पर जाया जा रहा है</string>
+    <string name="tts_not_understood">क्षमा करें, मुझे वह कमांड समझ में नहीं आया।</string>
+
+    <string name="game_memory_title">मेमोरी फ्लिप</string>
+    <string name="game_pattern_title">पैटर्न मैच</string>
+    <string name="game_word_title">शब्द पहेली</string>
+    <string name="game_math_title">गणित खोज</string>
+</resources>

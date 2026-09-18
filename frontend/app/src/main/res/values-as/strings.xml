@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">আৰোগ্য কগনিটিভ</string>
+    <string name="splash_tagline">কগনিটিভ স্বাস্থ্য আৰু দৈনিক সেৱা সংগী</string>
+    <string name="greeting_morning">শুভ প্ৰভাত</string>
+    <string name="greeting_afternoon">শুভ বিয়লি</string>
+    <string name="greeting_evening">শুভ গধূলি</string>
+    <string name="greeting_user">%1$s, %2$s</string>
+    <string name="offline_ready">অফলাইন প্ৰস্তুত</string>
+
+    <string name="role_title">আৰোগ্যলৈ স্বাগতম</string>
+    <string name="role_subtitle">আগবাঢ়িবলৈ আপোনাৰ ভূমিকা বাছনি কৰক</string>
+    <string name="role_patient">মই এজন ৰোগী</string>
+    <string name="role_patient_desc">মস্তিষ্ক প্ৰশিক্ষণ গেম খেলক, দৈনিক ঔষধৰ সোঁৱৰণী ছেট কৰক আৰু স্বাস্থ্য নিৰীক্ষণ কৰক</string>
+    <string name="role_caregiver">মই এজন সেৱাকাৰী</string>
+    <string name="role_caregiver_desc">ৰোগীৰ অগ্ৰগতি নিৰীক্ষণ কৰক, সোঁৱৰণী সূচী প্ৰস্তুত কৰক আৰু জৰুৰী সতৰ্কবাৰ্তা পাওক</string>
+
+    <string name="start_today_game">আজিলৈ কগনিটিভ গেম আৰম্ভ কৰক</string>
+    <string name="game_card_subtitle">আপোনাৰ স্মৃতি শক্তি জোৰদাৰ আৰু মন সক্ৰিয় ৰাখক</string>
+    <string name="play_now">এতিয়াই খেলক</string>
+    <string name="next_reminder">পরৱৰ্তী সোঁৱৰণী</string>
+    <string name="no_reminders">আজিৰ বাবে কোনো সোঁৱৰণী নাই</string>
+    <string name="your_progress">আপোনাৰ অগ্ৰগতি</string>
+    <string name="weekly_avg">সপ্তাহৰ গড়</string>
+    <string name="active_streak">সক্ৰিয় ক্ৰম</string>
+    <string name="days">দিন</string>
+
+    <string name="voice_assistant">ভয়েছ সহায়ক</string>
+    <string name="voice_listening">শুনি থকা হৈছে...</string>
+    <string name="voice_processing">প্রক্ৰিয়াকৰণ হৈ আছে...</string>
+    <string name="voice_prompt">মাইক্ৰ\'ফোনটো টিপক আৰু আদেশ কিয়</string>
+    <string name="voice_hint_examples">ক’বলৈ চেষ্টা কৰক: \"গেম আৰম্ভ কৰক\", \"সোঁৱৰণী দেখুৱাওক\", \"অগ্ৰগতি দেখুৱাওক\"</string>
+    <string name="quick_commands">দ্ৰুত ভয়েছ আদেশ</string>
+    <string name="cmd_start_game">গেম আৰম্ভ কৰক</string>
+    <string name="cmd_open_games">গেম খোলক</string>
+    <string name="cmd_show_progress">অগ্ৰগতি দেখুৱাওক</string>
+    <string name="cmd_show_reminders">সোঁৱৰণী দেখুৱাওক</string>
+    <string name="cmd_go_home">হোমলৈ যাওক</string>
+
+    <string name="language_settings">ভাষা ছেটিংছ</string>
+    <string name="select_language">ভাষা বাছনি কৰক</string>
+    <string name="lang_en">English</string>
+    <string name="lang_as">অসমীয়া (Assamese)</string>
+    <string name="lang_bn">বাংলা (Bengali)</string>
+    <string name="lang_hi">হিিন্দী (Hindi)</string>
+
+    <string name="nav_home">হোম</string>
+    <string name="nav_games">কগনিটিভ গেম</string>
+    <string name="nav_reminders">সোঁৱৰণী</string>
+    <string name="nav_progress">অগ্ৰগতি ট্ৰেকাৰ</string>
+    <string name="nav_profile">প্রফাইল</string>
+    <string name="nav_caregiver">সেৱাকাৰী ডেশ্বব’ৰ্ড</string>
+    <string name="nav_switch_role">ভূমিকা সলনি কৰক</string>
+
+    <string name="profile_title">ৰোগীৰ প্রফাইল</string>
+    <string name="profile_name">ৰোগীৰ নাম</string>
+    <string name="profile_age">বয়স</string>
+    <string name="profile_caregiver">সেৱাকাৰীৰ নাম</string>
+    <string name="profile_emergency">জৰুৰী যোগাযোগ</string>
+    <string name="profile_language">পছন্দৰ ভাষা</string>
+    <string name="edit_profile">প্রফাইল সম্পাদনা কৰক</string>
+    <string name="save_profile">প্রফাইল সংৰক্ষণ কৰক</string>
+
+    <string name="tts_opening_game">এতিয়া কগনিটিভ গেম খোলা হৈছে</string>
+    <string name="tts_opening_games_list">কগনিটিভ গেমৰ তালিকা খোলা হৈছে</string>
+    <string name="tts_opening_progress">আপোনাৰ অগ্ৰগতি সাৰাংশ খোলা হৈছে</string>
+    <string name="tts_opening_reminders">আপোনাৰ দৈনিক সোঁৱৰণী খোলা হৈছে</string>
+    <string name="tts_going_home">হোম স্ক্ৰীনলৈ যোৱা হৈছে</string>
+    <string name="tts_not_understood">ক্ষমা কৰিব, মই আদেশটো বুজি নাপালোঁ।</string>
+
+    <string name="game_memory_title">মেম\'ৰী ফ্লিপ</string>
+    <string name="game_pattern_title">প্যাটাৰ্ন মেচ</string>
+    <string name="game_word_title">ৱৰ্ড পাজল</string>
+    <string name="game_math_title">মেথ ক্যুৱেষ্ট</string>
+</resources>
