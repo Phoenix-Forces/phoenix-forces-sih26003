@@ -684,7 +684,6 @@ The current prototype implements a **rule-based adaptive difficulty engine**:
 | **Level 2** | Medium | 0.50 < accuracy < 0.80 → hold |
 | **Level 3** | Hard | accuracy ≥ 0.80 → increase |
 
-### 🔮 Grand Finale AI Direction
 
 The planned intelligence layer will move beyond fixed rules toward **AI-assisted personalization**, using historical performance patterns to personalize:
 
