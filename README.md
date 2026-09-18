@@ -777,7 +777,7 @@ The application is designed around **elderly accessibility**:
 
 ---
 
-## 🛣️ Grand Finale Roadmap
+## 🛣️ Future Roadmap
 
 ```
                      CURRENT PROTOTYPE
@@ -807,7 +807,7 @@ The application is designed around **elderly accessibility**:
                  └────────┬────────┘
                           │
                           ▼
-                    GRAND FINALE
+                      Upcoming
                           │
           ┌───────────────┼───────────────┐
           ▼               ▼               ▼
@@ -865,9 +865,9 @@ The application is designed around **elderly accessibility**:
 | 🔄 Cloud Sync API | ✅ Backend Ready |
 | 🔗 Full API Integration | 🚧 In Development |
 | 📊 Advanced Caregiver Analytics | 🚧 In Development |
-| 🗣️ Enhanced Voice Interface | 🔮 Grand Finale |
-| 🧠 AI Personalization | 🔮 Grand Finale |
-| 🗺️ NER Cultural Content | 🔮 Grand Finale |
+| 🗣️ Enhanced Voice Interface | 🚧 In Development |
+| 🧠 AI Personalization | 🚧 In Development |
+| 🗺️ NER Cultural Content | 🚧 In Development |
 
 ---
 
@@ -910,20 +910,7 @@ The project focuses on building an accessible and scalable digital platform for 
 
 ---
 
-## 📸 Screenshots
 
-> Application screenshots and demonstrations will be added as the prototype evolves.
-
-| Screen | Preview |
-|--------|---------|
-| 🏠 Home Dashboard | *Coming soon* |
-| 🧩 Cognitive Games | *Coming soon* |
-| 🧠 Memory Match | *Coming soon* |
-| 📊 Performance Tracking | *Coming soon* |
-| 👨‍⚕️ Caregiver Dashboard | *Coming soon* |
-| 🗣️ Voice Assistant | *Coming soon* |
-
----
 
 ## 🧪 Testing
 
