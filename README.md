@@ -1,4 +1,4 @@
-<p align="center">
+<p alig![alt text](image.png)n="center">
   <img src="https://img.shields.io/badge/🧠_Arogya_Cognitive-Adaptive_Cognitive_Support_Platform-6C63FF?style=for-the-badge&labelColor=1a1a2e" alt="Arogya Cognitive" />
 </p>
 
