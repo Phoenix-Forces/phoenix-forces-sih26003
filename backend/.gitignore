@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .env
 .pytest_cache/
+# Lambda deployment artifacts
+*.zip
+lambda_package/
+lambda_package_old/
