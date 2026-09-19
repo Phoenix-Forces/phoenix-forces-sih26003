@@ -882,7 +882,7 @@ The application is designed around **elderly accessibility**:
 | **Sachin Goudar** | 📱 Frontend Developer |
 | **Jeevan CD** | ☁️ Backend Developer |
 | **Mahi Jadhav** | 📝 Research & Presentation |
-| **Dhruthi** | 📝 Research & Presentation |
+| **Dhruthi V S** | 📝 Research & Presentation |
 
 ---
 
