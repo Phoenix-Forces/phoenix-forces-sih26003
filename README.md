@@ -954,13 +954,6 @@ Arogya Cognitive is designed as a **modular platform** — additional capabiliti
 ## ⚠️ Disclaimer
 
 This project is developed as part of **Smart India Hackathon 2026** for educational and demonstration purposes. It is **not** intended for clinical diagnosis or medical treatment. Always consult qualified healthcare professionals for medical decisions.
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**. See [LICENSE](./LICENSE) for details.
-
 ---
 
 <p align="center">
