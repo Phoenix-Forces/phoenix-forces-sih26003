@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.myapplication.ArogyaApplication
+import com.example.myapplication.ui.auth.LoginViewModel
+import com.example.myapplication.ui.auth.RegisterViewModel
 import com.example.myapplication.ui.caregiver.alerts.CaregiverAlertsViewModel
 import com.example.myapplication.ui.caregiver.dashboard.CaregiverViewModel
 import com.example.myapplication.ui.caregiver.history.CaregiverGameHistoryViewModel
@@ -20,6 +22,14 @@ import com.example.myapplication.ui.voice.VoiceAssistantViewModel
 
 object AppViewModelProvider {
     val Factory = viewModelFactory {
+        initializer {
+            val app = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as ArogyaApplication)
+            LoginViewModel(authRepository = app.authRepository)
+        }
+        initializer {
+            val app = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as ArogyaApplication)
+            RegisterViewModel(authRepository = app.authRepository)
+        }
         initializer {
             val app = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as ArogyaApplication)
             RoleViewModel(app.settingsRepository)

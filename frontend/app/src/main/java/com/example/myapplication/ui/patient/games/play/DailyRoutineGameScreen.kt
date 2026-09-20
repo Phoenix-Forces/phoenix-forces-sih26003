@@ -30,6 +30,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import com.example.myapplication.ui.common.AppTopBar
+import com.example.myapplication.ui.common.PrimaryActionButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -115,13 +117,9 @@ fun DailyRoutineGameScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Daily Routine Recall", fontWeight = FontWeight.Bold) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
-                    }
-                }
+            AppTopBar(
+                title = "Daily Routine Recall",
+                onBack = onBack
             )
         },
         modifier = modifier
@@ -262,7 +260,8 @@ fun DailyRoutineGameScreen(
 
             // Action Button
             if (!isChecked) {
-                Button(
+                PrimaryActionButton(
+                    text = "Check Order",
                     onClick = {
                         isChecked = true
                         var correctCount = 0
@@ -271,16 +270,11 @@ fun DailyRoutineGameScreen(
                         }
                         totalCorrectSteps += correctCount
                         scoreSum += (correctCount * 25)
-                    },
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp)
-                ) {
-                    Text("Check Order", fontWeight = FontWeight.Bold, fontSize = 18.sp)
-                }
+                    }
+                )
             } else {
-                Button(
+                PrimaryActionButton(
+                    text = if (currentScenarioIndex < scenarios.size - 1) "Next Routine" else "Finish Routine Game",
                     onClick = {
                         if (currentScenarioIndex < scenarios.size - 1) {
                             currentScenarioIndex++
@@ -304,18 +298,8 @@ fun DailyRoutineGameScreen(
                                 )
                             )
                         }
-                    },
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp)
-                ) {
-                    Text(
-                        text = if (currentScenarioIndex < scenarios.size - 1) "Next Routine" else "Finish Routine Game",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 18.sp
-                    )
-                }
+                    }
+                )
             }
         }
     }

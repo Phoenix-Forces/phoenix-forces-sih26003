@@ -34,7 +34,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import com.example.myapplication.ui.common.AppTopBar
+import com.example.myapplication.ui.common.PrimaryActionButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -131,13 +132,9 @@ fun PatternMemoryScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Pattern Memory", fontWeight = FontWeight.Bold) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
-                    }
-                }
+            AppTopBar(
+                title = "Pattern Memory",
+                onBack = onBack
             )
         },
         modifier = modifier
@@ -260,35 +257,23 @@ fun PatternMemoryScreen(
 
             // Action button
             if (!isTimerRunning && userInputs.isEmpty()) {
-                Button(
+                PrimaryActionButton(
+                    text = "Start Pattern Game",
                     onClick = {
                         isTimerRunning = true
                         secondsElapsed = 0
                         mistakes = 0
                     },
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp)
-                ) {
-                    Icon(Icons.Default.PlayArrow, contentDescription = null)
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = "Start Pattern Game", fontWeight = FontWeight.Bold, fontSize = 18.sp)
-                }
+                    icon = Icons.Default.PlayArrow
+                )
             } else if (!isUserTurn && !isDemonstrating && mistakes > 0) {
-                Button(
+                PrimaryActionButton(
+                    text = "Replay Pattern",
                     onClick = {
                         userInputs.clear()
                     },
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp)
-                ) {
-                    Icon(Icons.Default.Psychology, contentDescription = null)
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = "Replay Pattern", fontWeight = FontWeight.Bold, fontSize = 18.sp)
-                }
+                    icon = Icons.Default.Psychology
+                )
             } else {
                 Spacer(modifier = Modifier.height(56.dp))
             }

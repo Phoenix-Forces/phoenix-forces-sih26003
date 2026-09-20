@@ -21,6 +21,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
+import androidx.compose.material.icons.automirrored.rounded.Logout
 import androidx.compose.material.icons.automirrored.rounded.ListAlt
 import androidx.compose.material.icons.rounded.Analytics
 import androidx.compose.material.icons.rounded.CheckCircle
@@ -97,8 +98,8 @@ fun CaregiverDashboardScreen(
                 navigationIcon = {
                     IconButton(onClick = onBackToRoleSelection) {
                         Icon(
-                            imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                            contentDescription = "Switch Role / Back"
+                            imageVector = Icons.AutoMirrored.Rounded.Logout,
+                            contentDescription = "Logout"
                         )
                     }
                 },

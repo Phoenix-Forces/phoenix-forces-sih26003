@@ -486,7 +486,9 @@ The current prototype demonstrates the complete application workflow from game p
 
 | Component | Details |
 |-----------|---------|
-| 📱 **Android Application** | Kotlin + Jetpack Compose + Material 3 |
+| 📱 **Android Application** | Premium Healthcare UI/UX, Kotlin + Jetpack Compose + Material 3 |
+| 🔐 **Cognito Authentication** | Full frontend/backend JWT Auth with AES-256-GCM secure token storage |
+| 🔀 **Role-Based Routing** | Cognito-driven Patient / Caregiver portal separation with Demo mode |
 | 🧩 **6 Cognitive Games** | Full game logic, UI, scoring, and timer |
 | 💾 **Room Database** | 4 tables (patients, game_results, reminders, alerts) with seed data |
 | 📊 **Performance Tracking** | Score, accuracy, time, difficulty, domain breakdown, 7-day trends |
@@ -500,7 +502,6 @@ The current prototype demonstrates the complete application workflow from game p
 | ⚡ **FastAPI Backend** | 11 route modules, Pydantic validation, Mangum handler |
 | ☁️ **AWS Lambda** | Deployed with API Gateway |
 | 🗄️ **DynamoDB** | Single-table design — game results, reminders, alerts, sync operations |
-| 🔐 **Cognito Auth** | JWT verification via JWKS (RS256) on backend |
 | 🔄 **Sync API** | `POST /sync` for batch offline operation processing |
 
 ### 🚧 In Development
@@ -509,7 +510,6 @@ The current prototype demonstrates the complete application workflow from game p
 |-----------|---------|
 | 🔗 **Full API Integration** | Expanding Retrofit endpoints beyond game results |
 | 🔄 **Sync Queue** | Automatic retry for failed API sync with WorkManager |
-| 🔐 **Android Auth Flow** | Cognito SDK integration on the mobile client |
 | 📊 **Caregiver Analytics** | Advanced trend analysis and reporting |
 | 🧠 **AI Personalization** | ML-based cognitive trend prediction and game recommendations |
 | 🗣️ **Voice-First Interaction** | Enhanced STT/TTS with NER language support |
@@ -859,7 +859,7 @@ The application is designed around **elderly accessibility**:
 | ⚡ AWS Lambda | ✅ Deployed |
 | 🌐 API Gateway | ✅ Deployed |
 | 🗄️ DynamoDB | ✅ Configured |
-| 🔐 Cognito Authentication | ✅ Configured |
+| 🔐 Cognito Authentication | ✅ Implemented |
 | 🔄 Cloud Sync API | ✅ Backend Ready |
 | 🔗 Full API Integration | 🚧 In Development |
 | 📊 Advanced Caregiver Analytics | 🚧 In Development |

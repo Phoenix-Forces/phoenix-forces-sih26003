@@ -36,8 +36,9 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.Text
+import com.example.myapplication.ui.common.AppTopBar
+import com.example.myapplication.ui.common.PrimaryActionButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -73,25 +74,9 @@ fun ProfileScreen(
     ) {
         Scaffold(
             topBar = {
-                TopAppBar(
-                    title = {
-                        Text(
-                            text = stringResource(R.string.profile_title),
-                            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
-                        )
-                    },
-                    navigationIcon = {
-                        IconButton(onClick = onBack) {
-                            Icon(
-                                imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                                contentDescription = "Back",
-                                modifier = Modifier.size(28.dp)
-                            )
-                        }
-                    },
-                    colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.background
-                    )
+                AppTopBar(
+                    title = stringResource(R.string.profile_title),
+                    onBack = onBack
                 )
             }
         ) { paddingValues ->
@@ -224,7 +209,8 @@ fun ProfileScreen(
                 Spacer(modifier = Modifier.height(28.dp))
 
                 // Action Button (Edit / Save)
-                Button(
+                PrimaryActionButton(
+                    text = if (uiState.isEditing) stringResource(R.string.save_profile) else stringResource(R.string.edit_profile),
                     onClick = {
                         if (uiState.isEditing) {
                             val ageInt = ageInput.toIntOrNull() ?: uiState.age
@@ -233,30 +219,8 @@ fun ProfileScreen(
                             onToggleEditMode()
                         }
                     },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp),
-                    shape = RoundedCornerShape(16.dp)
-                ) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.Center
-                    ) {
-                        Icon(
-                            imageVector = if (uiState.isEditing) Icons.Rounded.Save else Icons.Rounded.Edit,
-                            contentDescription = null,
-                            modifier = Modifier.size(24.dp)
-                        )
-                        Spacer(modifier = Modifier.width(10.dp))
-                        Text(
-                            text = if (uiState.isEditing) stringResource(R.string.save_profile) else stringResource(R.string.edit_profile),
-                            style = MaterialTheme.typography.titleMedium.copy(
-                                fontWeight = FontWeight.Bold,
-                                fontSize = 18.sp
-                            )
-                        )
-                    }
-                }
+                    icon = if (uiState.isEditing) Icons.Rounded.Save else Icons.Rounded.Edit
+                )
             }
         }
     }

@@ -5,10 +5,19 @@ import kotlinx.serialization.Serializable
 
 sealed interface Screen : NavKey {
     @Serializable
+    data object Login : Screen
+
+    @Serializable
     data object Splash : Screen
 
     @Serializable
-    data object RoleSelection : Screen
+    data class RoleSelection(val reason: String = "register") : Screen
+
+    @Serializable
+    data class Register(val role: String = "patient") : Screen
+
+    @Serializable
+    data object Verification : Screen
 
     @Serializable
     data object PatientHome : Screen

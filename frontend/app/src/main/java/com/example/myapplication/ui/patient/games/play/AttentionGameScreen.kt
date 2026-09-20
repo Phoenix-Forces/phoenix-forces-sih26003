@@ -33,7 +33,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import com.example.myapplication.ui.common.AppTopBar
+import com.example.myapplication.ui.common.PrimaryActionButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -117,13 +118,9 @@ fun AttentionGameScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Attention & Concentration", fontWeight = FontWeight.Bold) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
-                    }
-                }
+            AppTopBar(
+                title = "Attention & Concentration",
+                onBack = onBack
             )
         },
         modifier = modifier
@@ -250,7 +247,8 @@ fun AttentionGameScreen(
                     )
                 }
 
-                Button(
+                PrimaryActionButton(
+                    text = if (currentRound < totalRounds) "Next Round" else "Complete Game",
                     onClick = {
                         if (currentRound < totalRounds) {
                             currentRound++
@@ -274,13 +272,8 @@ fun AttentionGameScreen(
                             )
                         }
                     },
-                    shape = RoundedCornerShape(16.dp)
-                ) {
-                    Text(
-                        text = if (currentRound < totalRounds) "Next Round" else "Complete Game",
-                        fontWeight = FontWeight.Bold
-                    )
-                }
+                    modifier = Modifier.weight(1f).padding(start = 16.dp)
+                )
             }
         }
     }

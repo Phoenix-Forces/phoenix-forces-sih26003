@@ -1,8 +1,19 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.google.devtools.ksp)
     alias(libs.plugins.jetbrains.kotlin.plugin.serialization)
+}
+
+// Read Cognito config from local.properties (not committed to VCS)
+val cognitoProperties = Properties()
+val cognitoPropsFile = rootProject.file("local.properties")
+if (cognitoPropsFile.exists()) {
+    cognitoPropsFile.inputStream().use { stream ->
+        cognitoProperties.load(stream)
+    }
 }
 
 android {
@@ -19,6 +30,20 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Cognito configuration — values from local.properties
+        buildConfigField(
+            "String", "COGNITO_CLIENT_ID",
+            "\"${cognitoProperties.getProperty("COGNITO_CLIENT_ID", "")}\""
+        )
+        buildConfigField(
+            "String", "COGNITO_USER_POOL_ID",
+            "\"${cognitoProperties.getProperty("COGNITO_USER_POOL_ID", "")}\""
+        )
+        buildConfigField(
+            "String", "COGNITO_REGION",
+            "\"${cognitoProperties.getProperty("COGNITO_REGION", "ap-south-1")}\""
+        )
     }
 
     buildTypes {
@@ -34,6 +59,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 

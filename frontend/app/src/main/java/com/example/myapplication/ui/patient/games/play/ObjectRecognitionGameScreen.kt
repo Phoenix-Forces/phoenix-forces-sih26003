@@ -29,7 +29,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import com.example.myapplication.ui.common.AppTopBar
+import com.example.myapplication.ui.common.PrimaryActionButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -116,13 +117,9 @@ fun ObjectRecognitionGameScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Object Recognition", fontWeight = FontWeight.Bold) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
-                    }
-                }
+            AppTopBar(
+                title = "Object Recognition",
+                onBack = onBack
             )
         },
         modifier = modifier
@@ -262,7 +259,8 @@ fun ObjectRecognitionGameScreen(
 
             // Next button
             if (selectedOption != null) {
-                Button(
+                PrimaryActionButton(
+                    text = if (questionIndex < questions.size - 1) "Next Question" else "View Game Results",
                     onClick = {
                         if (questionIndex < questions.size - 1) {
                             questionIndex++
@@ -285,18 +283,8 @@ fun ObjectRecognitionGameScreen(
                                 )
                             )
                         }
-                    },
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp)
-                ) {
-                    Text(
-                        text = if (questionIndex < questions.size - 1) "Next Question" else "View Game Results",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 18.sp
-                    )
-                }
+                    }
+                )
             } else {
                 Spacer(modifier = Modifier.height(56.dp))
             }

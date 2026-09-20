@@ -35,7 +35,7 @@ import androidx.compose.material.icons.rounded.Person
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material.icons.rounded.Psychology
 import androidx.compose.material.icons.rounded.SportsEsports
-import androidx.compose.material.icons.rounded.SwapHoriz
+import androidx.compose.material.icons.automirrored.rounded.Logout
 import androidx.compose.material.icons.rounded.Whatshot
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -174,8 +174,8 @@ fun PatientHomeScreen(
                 Spacer(modifier = Modifier.weight(1f))
 
                 NavigationDrawerItem(
-                    icon = { Icon(Icons.Rounded.SwapHoriz, contentDescription = null) },
-                    label = { Text(stringResource(R.string.nav_switch_role), fontSize = 18.sp) },
+                    icon = { Icon(Icons.AutoMirrored.Rounded.Logout, contentDescription = null) },
+                    label = { Text("Logout", fontSize = 18.sp) },
                     selected = false,
                     onClick = {
                         scope.launch { drawerState.close() }

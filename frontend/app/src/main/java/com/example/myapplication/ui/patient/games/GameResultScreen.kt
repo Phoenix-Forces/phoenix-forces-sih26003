@@ -35,7 +35,10 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.Text
+import com.example.myapplication.ui.common.AppTopBar
+import com.example.myapplication.ui.common.PrimaryActionButton
+import com.example.myapplication.ui.common.SecondaryActionButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -69,9 +72,7 @@ fun GameResultScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Game Performance", fontWeight = FontWeight.Bold) }
-            )
+            AppTopBar(title = "Game Performance")
         },
         modifier = modifier
     ) { paddingValues ->
@@ -210,17 +211,11 @@ fun GameResultScreen(
             Spacer(modifier = Modifier.height(24.dp))
 
             // Action Buttons
-            Button(
+            PrimaryActionButton(
+                text = "Play Again",
                 onClick = onPlayAgain,
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp)
-            ) {
-                Icon(Icons.Default.PlayArrow, contentDescription = null)
-                Spacer(modifier = Modifier.width(8.dp))
-                Text("Play Again", fontWeight = FontWeight.Bold, fontSize = 18.sp)
-            }
+                icon = Icons.Default.PlayArrow
+            )
 
             Spacer(modifier = Modifier.height(12.dp))
 
@@ -228,27 +223,18 @@ fun GameResultScreen(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                OutlinedButton(
+                SecondaryActionButton(
+                    text = "Games Hub",
                     onClick = onBackToGames,
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .weight(1f)
-                        .height(52.dp)
-                ) {
-                    Text("Games Hub", fontWeight = FontWeight.SemiBold)
-                }
+                    modifier = Modifier.weight(1f)
+                )
 
-                OutlinedButton(
+                SecondaryActionButton(
+                    text = "View Progress",
                     onClick = onViewProgress,
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .weight(1f)
-                        .height(52.dp)
-                ) {
-                    Icon(Icons.Default.ShowChart, contentDescription = null, modifier = Modifier.size(18.dp))
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Text("View Progress", fontWeight = FontWeight.SemiBold)
-                }
+                    icon = Icons.Default.ShowChart,
+                    modifier = Modifier.weight(1f)
+                )
             }
         }
     }

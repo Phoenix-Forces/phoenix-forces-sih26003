@@ -5,11 +5,18 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
+import com.example.myapplication.ArogyaApplication
 import com.example.myapplication.ui.AppViewModelProvider
+import com.example.myapplication.ui.auth.LoginScreen
+import com.example.myapplication.ui.auth.LoginViewModel
+import com.example.myapplication.ui.auth.RegisterScreen
+import com.example.myapplication.ui.auth.RegisterViewModel
+import com.example.myapplication.ui.auth.VerificationScreen
 import com.example.myapplication.ui.caregiver.alerts.CaregiverAlertsScreen
 import com.example.myapplication.ui.caregiver.alerts.CaregiverAlertsViewModel
 import com.example.myapplication.ui.caregiver.dashboard.CaregiverDashboardScreen
@@ -47,6 +54,8 @@ import com.example.myapplication.ui.voice.VoiceAssistantViewModel
 fun AppNavigation(
     modifier: Modifier = Modifier
 ) {
+    val context = LocalContext.current
+    val app = context.applicationContext as ArogyaApplication
     val backStack = rememberNavBackStack(Screen.Splash)
 
     NavDisplay(
@@ -59,19 +68,95 @@ fun AppNavigation(
                     SplashScreen(
                         onTimeout = {
                             if (backStack.isNotEmpty()) backStack.removeAt(backStack.size - 1)
-                            backStack.add(Screen.PatientHome)
+                            when {
+                                // 1. Authenticated or Demo session: route by role
+                                app.authRepository.isAuthenticated() || app.authRepository.isDemoMode() -> {
+                                    val role = app.authRepository.getUserRole()
+                                    if (role == "caregiver") {
+                                        backStack.add(Screen.CaregiverDashboard)
+                                    } else {
+                                        backStack.add(Screen.PatientHome)
+                                    }
+                                }
+                                // 2. Not authenticated: show login
+                                else -> {
+                                    backStack.add(Screen.Login)
+                                }
+                            }
                         }
                     )
                 }
-                is Screen.RoleSelection -> {
-                    RoleSelectionScreen(
-                        onSelectRole = { role ->
-                            if (role == "CAREGIVER") {
+                is Screen.Login -> {
+                    val loginViewModel: LoginViewModel = viewModel(
+                        factory = AppViewModelProvider.Factory
+                    )
+
+                    LaunchedEffect(Unit) {
+                        loginViewModel.reset()
+                    }
+
+                    val loginUiState by loginViewModel.uiState.collectAsState()
+
+                    LaunchedEffect(loginUiState.loginSuccess) {
+                        if (loginUiState.loginSuccess) {
+                            backStack.clear()
+                            if (loginUiState.role == "caregiver") {
                                 backStack.add(Screen.CaregiverDashboard)
                             } else {
                                 backStack.add(Screen.PatientHome)
                             }
                         }
+                    }
+
+                    LoginScreen(
+                        uiState = loginUiState,
+                        onSignIn = { username, password ->
+                            loginViewModel.signIn(username, password)
+                        },
+                        onCreateAccount = { backStack.add(Screen.RoleSelection()) },
+                        onDemoMode = { backStack.add(Screen.RoleSelection("demo")) },
+                        onClearError = { loginViewModel.clearError() }
+                    )
+                }
+                is Screen.RoleSelection -> {
+                    RoleSelectionScreen(
+                        onSelectRole = { role ->
+                            if (key.reason == "demo") {
+                                app.authRepository.enterDemoMode(role.lowercase())
+                                backStack.clear()
+                                if (role.equals("CAREGIVER", ignoreCase = true)) {
+                                    backStack.add(Screen.CaregiverDashboard)
+                                } else {
+                                    backStack.add(Screen.PatientHome)
+                                }
+                            } else {
+                                backStack.add(Screen.Register(role.lowercase()))
+                            }
+                        }
+                    )
+                }
+                is Screen.Register -> {
+                    val registerViewModel: RegisterViewModel = viewModel(
+                        factory = AppViewModelProvider.Factory
+                    )
+                    RegisterScreen(
+                        role = key.role,
+                        viewModel = registerViewModel,
+                        onNavigateToVerification = { backStack.add(Screen.Verification) },
+                        onNavigateBack = { if (backStack.isNotEmpty()) backStack.removeAt(backStack.size - 1) }
+                    )
+                }
+                is Screen.Verification -> {
+                    val registerViewModel: RegisterViewModel = viewModel(
+                        factory = AppViewModelProvider.Factory
+                    )
+                    VerificationScreen(
+                        viewModel = registerViewModel,
+                        onNavigateToLogin = {
+                            backStack.clear()
+                            backStack.add(Screen.Login)
+                        },
+                        onNavigateBack = { if (backStack.isNotEmpty()) backStack.removeAt(backStack.size - 1) }
                     )
                 }
                 is Screen.PatientHome -> {
@@ -88,7 +173,11 @@ fun AppNavigation(
                         onNavigateToReminders = { backStack.add(Screen.Reminders) },
                         onNavigateToProgress = { backStack.add(Screen.PatientProgress) },
                         onNavigateToLanguage = { backStack.add(Screen.LanguageSettings) },
-                        onSwitchRole = { backStack.add(Screen.RoleSelection) }
+                        onSwitchRole = {
+                            app.authRepository.signOut()
+                            backStack.clear()
+                            backStack.add(Screen.Login)
+                        }
                     )
                 }
                 is Screen.Profile -> {
@@ -313,7 +402,11 @@ fun AppNavigation(
                         onNavigateToReminders = { backStack.add(Screen.Reminders) },
                         onNavigateToPatientDetail = { backStack.add(Screen.CaregiverPatientDetail()) },
                         onNavigateToAlerts = { backStack.add(Screen.CaregiverAlerts) },
-                        onBackToRoleSelection = { backStack.add(Screen.RoleSelection) }
+                        onBackToRoleSelection = {
+                            app.authRepository.signOut()
+                            backStack.clear()
+                            backStack.add(Screen.Login)
+                        }
                     )
                 }
                 is Screen.CaregiverPatientDetail -> {
